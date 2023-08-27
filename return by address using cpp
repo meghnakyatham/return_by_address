@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int * func(){ //: Defines a function 'func' that returns a pointer to an integer.
+    int *p = new int[5]; // Allocates dynamic memory for an array of 5 integers and stores the address in pointer p
+    for(int i = 0; i<5; i++){  //Fills the allocated array with values based on the index
+        p[i] = 5*i;
+    }
+    cout<<p<<endl; // Prints the memory address stored in pointer p to the console
+    return p;
+}
+
+int main(){
+    int *q = func(); //Calls the 'func' function and stores the returned pointer in 'q'
+
+    cout<<q<<endl; //Prints the memory address stored in pointer 'q' to the console
+    for(int i = 0; i<5; i++) //Prints each element of the array pointed to by q.
+    cout<<q[i]<<endl;
+
+    return 0;
+
+} //Overall, the code dynamically allocates an array of integers, fills it with values, and demonstrates memory addresses and array element access
